@@ -15,15 +15,17 @@ Fashion MNIST consists of 70,000 grayscale images of size 28×28 belonging to 10
 ### Python
 Install via `pip`:
 ```bash
-pip install keras numpy
+pip install keras numpy tensorflow tabulate
 ```
 
 ### R
 Install and configure:
 ```r
 install.packages("keras")
+install.packages("tensorflow")
 library(keras)
 install_keras()
+install_tensorflow()
 ```
 
 ## Usage
@@ -47,7 +49,7 @@ install_keras()
 2. Ensure R dependencies are installed.
 3. In an R session or script:
    ```r
-   source("cnn_fashion_mnist.R")
+   source("main.R")
    ```
 4. The script will perform the same steps as the Python version.
 
