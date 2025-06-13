@@ -35,7 +35,7 @@ install_tensorflow()
 2. Ensure dependencies are installed.
 3. Run:
    ```bash
-   python cnn_fashion_mnist.py
+   python main.py
    ```
 4. The script will:
    - Load and preprocess the data
