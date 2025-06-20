@@ -1,0 +1,9 @@
+Flask
+pymongo
+dnspython
+Flask-WTF
+WTForms
+python-dotenv
+matplotlib
+python-pptx
+pandas

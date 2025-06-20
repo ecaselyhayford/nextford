@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Expense Form</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <h2>User Expense Form</h2>
+
+    <div class="flash-container">
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="flash-message {{ category }}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
+    </div>
+
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        <label>{{ form.age.label }}</label>
+        {{ form.age(class="form-control") }}
+      </div>
+
+      <div class="form-group">
+        <label>{{ form.gender.label }}</label>
+        <div class="radio-group">
+          {% for subfield in form.gender %}
+          <label class="radio-option"
+            >{{ subfield() }} {{ subfield.label.text }}</label
+          >
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>{{ form.income.label }}</label>
+        {{ form.income(class="form-control") }}
+      </div>
+
+      <h3>Expense Categories</h3>
+
+      <div class="expense-group">
+        <label class="checkbox-label"
+          >{{ form.utilities() }} {{ form.utilities.label }}</label
+        >
+        {{ form.utilities_amount(class="form-control") }}
+      </div>
+
+      <div class="expense-group">
+        <label class="checkbox-label"
+          >{{ form.entertainment() }} {{ form.entertainment.label }}</label
+        >
+        {{ form.entertainment_amount(class="form-control") }}
+      </div>
+
+      <div class="expense-group">
+        <label class="checkbox-label"
+          >{{ form.school_fees() }} {{ form.school_fees.label }}</label
+        >
+        {{ form.school_fees_amount(class="form-control") }}
+      </div>
+
+      <div class="expense-group">
+        <label class="checkbox-label"
+          >{{ form.shopping() }} {{ form.shopping.label }}</label
+        >
+        {{ form.shopping_amount(class="form-control") }}
+      </div>
+
+      <div class="expense-group">
+        <label class="checkbox-label"
+          >{{ form.healthcare() }} {{ form.healthcare.label }}</label
+        >
+        {{ form.healthcare_amount(class="form-control") }}
+      </div>
+
+      <p><input type="submit" value="Submit" /></p>
+    </form>
+  </body>
+</html>
