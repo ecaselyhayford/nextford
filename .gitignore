@@ -1,2 +1,3 @@
 .venv
 .ipynp_checkpoints
+.env
