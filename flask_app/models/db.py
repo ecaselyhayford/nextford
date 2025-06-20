@@ -4,4 +4,3 @@ from config import Config
 client = MongoClient(Config.MONGO_URI)
 db = client.db_expense_tracker
 collection = db.expenses
-
